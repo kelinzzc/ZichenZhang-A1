@@ -1,17 +1,17 @@
 public class GeneralPractitioner extends HealthProfessional {
     private String WorkPlace;
 
-    // 默认构造函数
+    // Default constructor
     public GeneralPractitioner() {
     }
 
-    // 带参数的构造函数
+    // A constructor with arguments
     public GeneralPractitioner(int ID, String name, String Position, String WorkPlace) {
         super(ID, name, Position);
         this.WorkPlace = WorkPlace;
     }
 
-    // 打印健康专业人员详细信息的方法，包括类型
+    // A method to print all instance variables
     @Override
     public void printDetails() {
         System.out.println("The health professional details are:");

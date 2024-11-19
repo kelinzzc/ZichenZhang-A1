@@ -78,3 +78,107 @@ public class AssignmentOne {
         System.out.println("This reservation is not available.");
     }
 }
+
+public class HealthProfessional {
+    private int ID;
+    private String name;
+    private String Position;
+
+    // Default constructor
+    public HealthProfessional() {
+    }
+
+    // A constructor with arguments
+    public HealthProfessional(int ID, String name, String Position) {
+        this.ID = ID;
+        this.name = name;
+        this.Position = Position;
+    }
+
+    // A method to print all instance variables
+    public void printDetails() {
+        System.out.println("ID: " + ID);
+        System.out.println("Name: " + name);
+        System.out.println("Position: " + Position);
+    }
+}
+
+public class GeneralPractitioner extends HealthProfessional {
+    private String WorkPlace;
+
+    // Default constructor
+    public GeneralPractitioner() {
+    }
+
+    // A constructor with arguments
+    public GeneralPractitioner(int ID, String name, String Position, String WorkPlace) {
+        super(ID, name, Position);
+        this.WorkPlace = WorkPlace;
+    }
+
+    // A method to print all instance variables
+    @Override
+    public void printDetails() {
+        System.out.println("The health professional details are:");
+        super.printDetails();
+        System.out.println("Type: General Practitioner");
+        System.out.println("Work Place: " + WorkPlace);
+    }
+}
+
+public class EmergencyPhysician extends HealthProfessional {
+    private String ProfessionalTitle;
+
+    // Default constructor
+    public EmergencyPhysician() {
+    }
+
+    // A constructor with arguments
+    public EmergencyPhysician(int ID, String name, String Position, String ProfessionalTitle) {
+        super(ID, name, Position);
+        this.ProfessionalTitle = ProfessionalTitle;
+    }
+
+    // A method to print all instance variables
+    @Override
+    public void printDetails() {
+        System.out.println("The health professional details are:");
+        super.printDetails();
+        System.out.println("Type: Specialist");
+        System.out.println("Professional Title: " + ProfessionalTitle);
+    }
+}
+
+public class Appointment {
+    private String patientName;
+    private String ContactInformation;
+    private String preferredTimeSlot;
+    private HealthProfessional doctor;
+
+    // Default constructor
+    public Appointment() {
+    }
+
+    // A constructor with arguments
+    public Appointment(String patientName, String ContactInformation, String preferredTimeSlot, HealthProfessional doctor) {
+        this.patientName = patientName;
+        this.ContactInformation = ContactInformation;
+        this.preferredTimeSlot = preferredTimeSlot;
+        this.doctor = doctor;
+    }
+
+    // A method to print all instance variables
+    public void printDetails() {
+        System.out.println("Patient Name: " + patientName);
+        System.out.println("Contact information: " + ContactInformation);
+        System.out.println("Preferred Time Slot: " + preferredTimeSlot);
+        System.out.println("Doctor Details:");
+        doctor.printDetails();
+    }
+
+    public String getContactInformation() {
+        return ContactInformation;
+    }
+
+}
+
